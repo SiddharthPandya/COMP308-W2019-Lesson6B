@@ -1,0 +1,31 @@
+<% include ../partials/header.ejs %>
+
+    <!-- Embed content here -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-3 col-md-6">
+                <h1><%= title %></h1>
+                <br>
+                <table class="table table-brodered table-striped table-hover">
+                    <!-- Header Row -->
+                    <tr>
+                        <th class="text-centre">First Name</th>
+                        <th class="text-centre">Last Name</th>
+                        <th class="text-centre">Age</th>
+                    </tr>
+
+                    <!-- Repeatable Template Row -->
+                    <% for(let count=0; count<contactList.length; count++){ %>
+                    <tr>
+                        <td class="text-centre"><%= contactList[count].firstName %></td>
+                        <td class="text-centre"><%= contactList[count].lastName %></td>
+                        <td class="text-centre"><%= contactList[count].age %></td>
+                    </tr>
+                    <% } %>
+                </table>
+            </div>
+        </div>
+    </div>
+
+<% include ../partials/footer.ejs %>
