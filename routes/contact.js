@@ -99,4 +99,21 @@ router.post('/edit/:id', (req,res,next) => {
 
 });
 
+/* GET request to perform delete */
+router.get('/delete/:id', (req,res,next) => {
+    let id = req.params.id;
+
+    contactModel.remove({_id:id}, (err) => {
+        if(err){
+            console.log(err);
+
+            res.end(err);
+        }
+        else{
+            //refresh the contact list
+            res.redirect('/contactList');
+        }
+    });
+});
+
 module.exports = router;
