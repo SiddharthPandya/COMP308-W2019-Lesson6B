@@ -16,6 +16,8 @@
                         <th class="text-centre">First Name</th>
                         <th class="text-centre">Last Name</th>
                         <th class="text-centre">Age</th>
+                        <th class="text-centre"></th>
+                        <th class="text-centre"></th>
                     </tr>
 
                     <!-- Repeatable Template Row -->
@@ -24,6 +26,19 @@
                         <td class="text-centre"><%= contactList[count].firstName %></td>
                         <td class="text-centre"><%= contactList[count].lastName %></td>
                         <td class="text-centre"><%= contactList[count].age %></td>
+
+                        <td class="text-centre">
+                            <a href="/contactList/edit/<%= contactList[count]._id %>" class="btn btn-primary">
+                                <i class="fas fa-pencil-alt"></i> Edit
+                            </a>
+                        </td>
+
+                        <td class="text-centre">
+                                <a href="/contactList/delete/<%= contactList[count]._id %>" class="btn btn-danger">
+                                    <i class="fas fa-trash-alt"></i> Delete
+                                </a>
+                        </td>
+
                     </tr>
                     <% } %>
                 </table>
